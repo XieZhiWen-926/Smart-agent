@@ -128,8 +128,8 @@ docker-compose logs -f backend
 
 启动后访问：**http://localhost** （Nginx 网关统一入口）。
 
-- 后端直连：http://localhost:8000 ，Swagger 文档 http://localhost:8000/docs
-- 前端独立容器：http://localhost:8080
+- 后端直连：http://localhost:**** ，Swagger 文档 http://localhost:****/docs
+- 前端独立容器：http://localhost:****
 
 > 第一次启动 MySQL 会自动执行 `sql/init.sql` 建表并写入种子数据。
 
@@ -139,7 +139,7 @@ docker-compose logs -f backend
    ```bash
    mysql -u root -p < sql/init.sql
    ```
-2. **装 Redis 7**，默认 `127.0.0.1:6379` 启动。
+2. **装 Redis 7**，默认 `127.0.0.1:****` 启动。
 3. **配置后端**：
    ```bash
    cp .env.example .env          # 填入 MySQL/Redis 密码、DASHSCOPE_API_KEY
@@ -147,7 +147,7 @@ docker-compose logs -f backend
    python -m venv .venv
    # Windows: .venv\Scripts\activate   |  macOS/Linux: source .venv/bin/activate
    pip install -r requirements.txt
-   uvicorn app.main:app --reload --port 8000
+   uvicorn app.main:app --reload --port ****
    ```
 4. **启动 Celery（可选，做 CSV 导入时需要）**：
    ```bash
@@ -162,11 +162,10 @@ docker-compose logs -f backend
 
 ### 默认账号
 
-| 用户名 | 密码 | 说明 |
-|---|---|---|
-| `admin` | `admin123` | 初始化脚本写入的管理员 |
+| 用户名  | 密码      | 说明 |
+|------|---------|---|
+| `**` | `*****` | 初始化脚本写入的管理员 |
 
-> ⚠️ **上线前务必改掉这个默认密码**，并换掉 `JWT_SECRET_KEY`。
 
 ---
 
