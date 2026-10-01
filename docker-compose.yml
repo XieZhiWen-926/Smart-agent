@@ -1,0 +1,238 @@
+# ==============================================
+# 智扫通智能客服 v2 - Docker Compose 一键部署
+# ------------------------------------------------------------
+# Docker Compose 的作用：用一个文件把项目需要的全部容器
+# （数据库、缓存、后端、前端、网关、异步 worker）编排起来，
+# 一条命令 docker compose up -d 就能整套拉起，不用逐个手动起。
+#
+# 服务清单与依赖关系（按启动顺序）：
+#   mysql / redis          —— 基础设施，先起，带健康检查
+#   backend (FastAPI)      —— 等 mysql/redis 健康后才启动
+#   celery_worker          —— 异步任务（CSV 入库等），依赖 redis 做消息队列
+#   frontend (Vue+Nginx)   —— 静态页面容器
+#   nginx_gateway          —— 对外统一入口 :80，转发静态资源和 /api
+#
+# 启动：docker compose up -d      停止：docker compose down
+#
+# ------------------------------------------------------------
+# 【国内拉镜像超时怎么办？】—— 本文件已内置解决办法
+# ------------------------------------------------------------
+# 下面每个 image 和构建基础镜像都写成 ${DOCKER_MIRROR:-}xxx 的形式：
+#   - DOCKER_MIRROR 为空（默认）→ 用官方镜像名，如 mysql:8.0
+#   - 在 .env 里设 DOCKER_MIRROR=docker.m.daocloud.io/library/
+#     → 实际拉 docker.m.daocloud.io/library/mysql:8.0（国内加速）
+# 这样不用改本文件就能切换镜像源，详见 docs/测试手册-纯小白版.md 第 0 章。
+# ==============================================
+
+services:
+  # ---------- MySQL 数据库 ----------
+  mysql:
+    image: ${DOCKER_MIRROR:-}mysql:8.0
+    container_name: smart_agent_mysql
+    restart: unless-stopped
+    environment:
+      # ${变量:-默认值}：优先读根目录 .env，没配就用冒号后的默认值
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD:-root123456}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-smart_agent_v2}
+      MYSQL_CHARSET: utf8mb4
+      MYSQL_COLLATION: utf8mb4_unicode_ci
+      TZ: Asia/Shanghai
+      # LANG 影响容器内 mysql 客户端进程的默认字符集。
+      # 不设成 UTF-8 时，客户端可能用 latin1 执行 init.sql，
+      # 把中文（UTF-8 字节）按 latin1 解释后二次编码入库，出现乱码。
+      # init.sql 里已有 SET NAMES utf8mb4 兜底，这里再设一层更稳妥。
+      LANG: C.UTF-8
+    command:
+      # utf8mb4 才能存 emoji 和全部中文字符（utf8 是 MySQL 的残缺版）
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      # 兼容老牌客户端/驱动，避免 caching_sha2_password 握手失败
+      - --default-authentication-plugin=mysql_native_password
+      # 连接上限：后端 4 worker × (连接池20+溢出30) ≈ 200，留足余量
+      - --max_connections=500
+      # InnoDB 缓存池：MySQL 性能最关键的参数，内存够就调大
+      - --innodb_buffer_pool_size=512M
+    ports:
+      - "3306:3306" # 宿主机:容器。本地想用 Navicat 直连就靠这个映射
+    volumes:
+      - mysql_data:/var/lib/mysql  # 数据持久化到命名卷，容器删了数据还在
+      # MySQL 容器首次启动会自动执行该目录下的 .sql，完成建表+种子数据
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      # 健康检查：backend 配置了 depends_on: service_healthy，
+      # 会等 MySQL 真正能连上再启动，避免"后端抢跑连不上数据库"
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_PASSWORD:-root123456}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - smart_agent_net
+
+  # ---------- Redis 缓存/消息队列 ----------
+  # 一身三职：接口缓存、限流计数器、Celery 的 broker（任务队列）和结果存储
+  redis:
+    image: ${DOCKER_MIRROR:-}redis:7-alpine
+    container_name: smart_agent_redis
+    restart: unless-stopped
+    # --appendonly yes   开启 AOF 持久化，重启不丢任务；
+    # --maxmemory 256mb  内存上限，防止缓存把内存吃光；
+    # allkeys-lru        内存满时淘汰最久未用的 key（缓存场景的标准策略）
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - smart_agent_net
+
+  # ---------- FastAPI 后端 ----------
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      args:
+        # 让构建用的基础镜像也走加速源（不配则用 Dockerfile 里的默认值）
+        BASE_IMAGE: ${DOCKER_MIRROR:-}python:3.11-slim
+    container_name: smart_agent_backend
+    restart: unless-stopped
+    environment:
+      # 容器之间用"服务名"当主机名互相访问（Docker 内置 DNS），
+      # 所以这里写 mysql/redis 而不是 127.0.0.1
+      - MYSQL_HOST=mysql
+      - MYSQL_PORT=3306
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD:-root123456}
+      - MYSQL_DATABASE=${MYSQL_DATABASE:-smart_agent_v2}
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - DASHSCOPE_API_KEY=${DASHSCOPE_API_KEY:-}
+      - CHAT_MODEL_NAME=${CHAT_MODEL_NAME:-qwen3-max}
+      - EMBEDDING_MODEL_NAME=${EMBEDDING_MODEL_NAME:-text-embedding-v4}
+      - AMAP_KEY=${AMAP_KEY:-}
+      - BAIDU_MAP_AK=${BAIDU_MAP_AK:-}
+      - BAIDU_MAP_SK=${BAIDU_MAP_SK:-}
+      # 生产环境必须在 .env 里换掉，否则任何人都能伪造登录 token
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY:-change-me-in-production}
+      - APP_ENV=production
+    ports:
+      - "8000:8000" # 调试时可绕过网关直连后端（Swagger: /docs）
+    volumes:
+      - ./backend/app:/app/app   # 代码目录挂载进容器，改代码重建更快
+      - ./data:/app/data         # 知识库文件/上传文件/Chroma 向量库持久化
+      - ./logs:/app/logs
+    depends_on:
+      # 等 MySQL/Redis"健康"（真的能连）再启动，而不只是容器起来了
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    # 多 worker 提升并发（生产环境根据CPU核数调整）；
+    # --proxy-headers 让后端信任 Nginx 转发的 X-Forwarded-* 头，
+    # 拿到真实客户端 IP/协议（限流、日志都依赖它）
+    # worker 数从 4 改为 2：降低 langchain+chromadb 在多进程模式下启动失败概率；
+    # 排查阶段加 --log-level info 让启动问题可见
+    command: >
+      uvicorn app.main:app
+      --host 0.0.0.0 --port 8000
+      --workers 2
+      --proxy-headers
+      --forwarded-allow-ips="*"
+      --log-level info
+    networks:
+      - smart_agent_net
+
+  # ---------- Celery Worker（异步任务）----------
+  # CSV 入库、向量化等重任务在这里跑，削峰填谷：
+  # 主接口只负责"派活"，立刻返回，不阻塞用户聊天。
+  celery_worker:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      args:
+        BASE_IMAGE: ${DOCKER_MIRROR:-}python:3.11-slim
+    container_name: smart_agent_celery
+    restart: unless-stopped
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_PORT=3306
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD:-root123456}
+      - MYSQL_DATABASE=${MYSQL_DATABASE:-smart_agent_v2}
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - DASHSCOPE_API_KEY=${DASHSCOPE_API_KEY:-}
+      - C_FORCE_ROOT=true  # 容器里默认 root 运行，Celery 需要这个开关才肯起
+    volumes:
+      - ./backend/app:/app/app
+      - ./data:/app/data  # 要读用户上传的 CSV，必须与 backend 共享 data 目录
+    command: celery -A app.tasks.celery_app.celery worker --loglevel=info --concurrency=4
+    # 【为什么要单独写健康检查？】
+    # celery_worker 和 backend 用的是同一个镜像，会继承 Dockerfile 里
+    # "探测 8000 端口"的 HEALTHCHECK。但 Celery 根本不监听 8000，
+    # 于是容器状态会永远显示 (unhealthy)——看起来像故障，其实一切正常。
+    # 这里改成 Celery 官方的探活方式：inspect ping，能顺带验证
+    # "worker 活着 + 能连上 Redis broker"，比单纯探端口更有意义。
+    healthcheck:
+      test: ["CMD-SHELL", "celery -A app.tasks.celery_app.celery inspect ping -d celery@$${HOSTNAME} | grep -q pong"]
+      interval: 30s
+      timeout: 15s
+      start_period: 60s
+      retries: 3
+    depends_on:
+      - redis
+      - mysql
+    networks:
+      - smart_agent_net
+
+  # ---------- Vue 前端（nginx 托管静态文件）----------
+  # 构建时把 Vue 打包成纯静态文件，由容器内 Nginx 直接托管，
+  # 不需要 Node 运行时（见 frontend/Dockerfile 的多阶段构建）
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        NODE_IMAGE: ${DOCKER_MIRROR:-}node:20-alpine
+        NGINX_IMAGE: ${DOCKER_MIRROR:-}nginx:alpine
+    container_name: smart_agent_frontend
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - smart_agent_net
+
+  # ---------- Nginx 网关（统一入口 + 负载均衡 + SSE优化）----------
+  # 用户只访问这一个入口（:80）：静态资源转给 frontend 容器，
+  # /api 转给 backend；对 SSE 流式接口专门关闭了响应缓冲
+  # （配置详解见 deploy/nginx/nginx.conf）
+  nginx_gateway:
+    image: ${DOCKER_MIRROR:-}nginx:alpine
+    container_name: smart_agent_gateway
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./deploy/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - smart_agent_net
+
+# 命名数据卷：由 Docker 管理的持久化目录，容器删了数据不丢
+volumes:
+  mysql_data:
+  redis_data:
+
+# 自定义桥接网络：同一网络内的容器可以用服务名互相访问，
+# 同时与宿主机上其他无关容器隔离
+networks:
+  smart_agent_net:
+    driver: bridge

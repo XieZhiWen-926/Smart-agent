@@ -1,0 +1,1617 @@
+2026-09-28 20:16:53 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 1
+2026-09-28 20:17:06 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 1
+2026-09-28 20:17:06 | INFO    | smart_agent | [ToolCall] -> echo args={'text': 'hello'}
+2026-09-28 20:17:06 | INFO    | smart_agent | [ToolCall] <- echo result=echo:hello
+2026-09-28 20:17:06 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 3
+2026-09-28 13:57:48 | INFO    | smart_agent | 数据库表结构检查完成
+2026-09-28 13:57:48 | INFO    | smart_agent | 默认管理员已存在，跳过创建
+2026-09-28 13:57:48 | INFO    | smart_agent | 默认管理员已存在，跳过创建
+2026-09-28 13:57:48 | INFO    | smart_agent | 动态工具加载：DB 中启用工具 7 个
+2026-09-28 13:57:48 | INFO    | smart_agent | 动态工具注册完成，共 7 个可用工具
+2026-09-28 13:57:48 | INFO    | smart_agent | 动态工具注册表加载完成
+2026-09-28 13:58:23 | INFO    | smart_agent | 初始化 Chroma 向量库: dir=/app/data/chroma_db, collection=agent_knowledge
+2026-09-28 13:58:23 | INFO    | smart_agent | 初始化 Embeddings: text-embedding-v4
+2026-09-28 13:58:24 | INFO    | smart_agent | 已清空向量集合，开始重新入库
+2026-09-28 13:58:25 | INFO    | smart_agent | 扫地机器人100问.pdf 解析完成，共 8 页
+2026-09-28 13:58:27 | INFO    | smart_agent | 向量化写入 16 条文档片段
+2026-09-28 13:58:27 | INFO    | smart_agent | 入库 扫地机器人100问.pdf：5112 字 → 16 个片段
+2026-09-28 13:58:28 | INFO    | smart_agent | 向量化写入 20 条文档片段
+2026-09-28 13:58:28 | INFO    | smart_agent | 入库 扫地机器人100问2.txt：7058 字 → 20 个片段
+2026-09-28 13:58:29 | INFO    | smart_agent | 向量化写入 20 条文档片段
+2026-09-28 13:58:29 | INFO    | smart_agent | 入库 扫拖一体机器人100问.txt：7980 字 → 20 个片段
+2026-09-28 13:58:32 | INFO    | smart_agent | 向量化写入 37 条文档片段
+2026-09-28 13:58:32 | INFO    | smart_agent | 入库 故障排除.txt：15078 字 → 37 个片段
+2026-09-28 13:58:34 | INFO    | smart_agent | 向量化写入 22 条文档片段
+2026-09-28 13:58:34 | INFO    | smart_agent | 入库 维护保养.txt：8927 字 → 22 个片段
+2026-09-28 13:58:35 | INFO    | smart_agent | 向量化写入 20 条文档片段
+2026-09-28 13:58:35 | INFO    | smart_agent | 入库 选购指南.txt：8629 字 → 20 个片段
+2026-09-28 13:58:35 | INFO    | smart_agent | 知识库入库完成：6 个文件，共 135 个片段
+2026-09-28 13:58:36 | INFO    | smart_agent | 入库自检：检索到 3 条片段
+2026-09-28 13:58:36 | INFO    | smart_agent |   - 来源=扫地机器人100问2.txt 片段='# 扫地机器人常见问题及解答（100条）\n### 基础使用类\n1. **首次使用'
+2026-09-28 13:58:36 | INFO    | smart_agent |   - 来源=扫地机器人100问2.txt 片段='- 检查尘盒、滤网是否堵塞，电量是否不足，机身传感器是否被灰尘遮挡，清洁后重试。'
+2026-09-28 13:58:36 | INFO    | smart_agent |   - 来源=故障排除.txt 片段='198. 故障现象：拖地时拖布旋转不均匀，部分区域未拖到；检测：拖布电机是否故障'
+2026-09-28 13:58:56 | INFO    | smart_agent | 初始化 ChatModel: qwen3-max
+2026-09-28 13:58:57 | INFO    | smart_agent | [chat] 自动新建会话 id=23 customer=1
+2026-09-28 13:58:57 | INFO    | smart_agent | 初始化 ChatModel: qwen3-max
+2026-09-28 13:58:57 | INFO    | smart_agent | [agent] build完成 customer=1 conv=23 tools=7 recent_msgs=0
+2026-09-28 13:58:57 | INFO    | smart_agent | 初始化 Embeddings: text-embedding-v4
+2026-09-28 13:58:58 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 13:58:59 | INFO    | smart_agent | [ToolCall] -> rag_summarize args={'query': '智扫通Pro X1 工作异响 原因'}
+2026-09-28 13:58:59 | INFO    | smart_agent | 初始化 Chroma 向量库: dir=/app/data/chroma_db, collection=agent_knowledge
+2026-09-28 13:59:02 | INFO    | smart_agent | [ToolCall] <- rag_summarize result=根据现有知识库未找到相关信息。
+2026-09-28 13:59:02 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 13:59:06 | INFO    | smart_agent | [memory] customer=1 新写入 2 条长期记忆
+2026-09-28 13:59:06 | INFO    | smart_agent | [chat] 自动新建会话 id=24 customer=1
+2026-09-28 13:59:06 | INFO    | smart_agent | [agent] build完成 customer=1 conv=24 tools=7 recent_msgs=0
+2026-09-28 13:59:06 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 13:59:07 | INFO    | smart_agent | [ToolCall] -> amap_weather args={'city': '北京'}
+2026-09-28 13:59:08 | INFO    | smart_agent | [ToolCall] <- amap_weather result=【北京 天气】
+未来预报：
+  2026-09-28（周1）：白天多云 24℃ / 夜间小雨 17℃，南风1-3级
+  2026-09-29（周2）：白天多云 25℃ / 夜间多云 14℃，南风1-3级
+  2026-09-30（周3）：白天晴 19℃ / 夜间晴 10℃，西北风1-3级
+  2026-10-01（周4）：白天晴 21℃ / 夜间晴 8℃，西南风1-3级
+2026-09-28 13:59:08 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 13:59:10 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 13:59:10 | INFO    | smart_agent | [chat] 自动新建会话 id=25 customer=1
+2026-09-28 13:59:10 | INFO    | smart_agent | [agent] build完成 customer=1 conv=25 tools=7 recent_msgs=0
+2026-09-28 13:59:11 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 13:59:12 | INFO    | smart_agent | [ToolCall] -> amap_geocode args={'address': '深圳市南山区科技园', 'city': '深圳'}
+2026-09-28 13:59:12 | INFO    | smart_agent | [ToolCall] <- amap_geocode result=地址解析结果：
+- 标准化地址：广东省深圳市南山区科技园
+- 经纬度（高德GCJ02）：113.946040,22.544610
+- 省份：广东省
+- 城市：深圳市
+- 区县：南山区
+2026-09-28 13:59:12 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 13:59:14 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 13:59:15 | INFO    | smart_agent | [chat] 自动新建会话 id=26 customer=1
+2026-09-28 13:59:15 | INFO    | smart_agent | [agent] build完成 customer=1 conv=26 tools=7 recent_msgs=0
+2026-09-28 13:59:16 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 13:59:16 | INFO    | smart_agent | [ToolCall] -> amap_geocode args={'address': '杭州市西湖区'}
+2026-09-28 13:59:16 | INFO    | smart_agent | [ToolCall] <- amap_geocode result=地址解析结果：
+- 标准化地址：浙江省杭州市西湖区
+- 经纬度（高德GCJ02）：120.130396,30.259242
+- 省份：浙江省
+- 城市：杭州市
+- 区县：西湖区
+2026-09-28 13:59:17 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 13:59:19 | INFO    | smart_agent | [ToolCall] -> amap_around_search args={'keyword': '家电维修'}
+2026-09-28 13:59:19 | INFO    | smart_agent | [ToolCall] <- amap_around_search result=Error invoking tool 'amap_around_search' with kwargs {'keyword': '家电维修'} with error:
+ location: Field required
+ Please fix the error and try again.
+2026-09-28 13:59:19 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 6
+2026-09-28 13:59:19 | ERROR   | smart_agent | [agent] 流式执行异常: request_id: 778d0105-9b8c-942d-9e0a-a8e815383ab9 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+Traceback (most recent call last):
+  File "/app/app/agent/react_agent.py", line 227, in execute_stream
+    async for chunk, metadata in self.agent.astream(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3440, in astream
+    async for _ in runner.atick(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 557, in atick
+    _panic_or_proceed(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 687, in _panic_or_proceed
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 744, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 756, in ainvoke
+    input = await asyncio.create_task(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 522, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1534, in amodel_node
+    model_response = await _execute_model_async(request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1505, in _execute_model_async
+    output = await model_.ainvoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6027, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2136, in _agenerate_with_cache
+    async for chunk in self._astream(messages, stop=stop, **kwargs):
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 765, in _astream
+    async for stream_resp, is_last_chunk in agenerate_with_last_element_mark(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 152, in agenerate_with_last_element_mark
+    item = await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 646, in astream_completion_with_retry
+    async for chunk in _AioTongyiGenerator(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 632, in __anext__
+    value = await asyncio.get_running_loop().run_in_executor(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 642, in _safe_next
+    return next(self.generator)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 580, in _stream_completion_with_retry
+    yield check_response(delta_resp)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 61, in check_response
+    raise ValueError(
+ValueError: request_id: 778d0105-9b8c-942d-9e0a-a8e815383ab9 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+During task with name 'model' and id '9e3ad439-ea2a-a911-a4fa-cd75637cf78b'
+2026-09-28 13:59:19 | ERROR   | smart_agent | SSE 流式聊天异常
+Traceback (most recent call last):
+  File "/app/app/api/chat.py", line 84, in event_generator
+    async for chunk in ChatService.stream_chat(
+  File "/app/app/services/chat_service.py", line 80, in stream_chat
+    async for chunk in agent.execute_stream(query, db):
+  File "/app/app/agent/react_agent.py", line 227, in execute_stream
+    async for chunk, metadata in self.agent.astream(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3440, in astream
+    async for _ in runner.atick(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 557, in atick
+    _panic_or_proceed(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 687, in _panic_or_proceed
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 744, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 756, in ainvoke
+    input = await asyncio.create_task(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 522, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1534, in amodel_node
+    model_response = await _execute_model_async(request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1505, in _execute_model_async
+    output = await model_.ainvoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6027, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2136, in _agenerate_with_cache
+    async for chunk in self._astream(messages, stop=stop, **kwargs):
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 765, in _astream
+    async for stream_resp, is_last_chunk in agenerate_with_last_element_mark(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 152, in agenerate_with_last_element_mark
+    item = await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 646, in astream_completion_with_retry
+    async for chunk in _AioTongyiGenerator(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 632, in __anext__
+    value = await asyncio.get_running_loop().run_in_executor(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 642, in _safe_next
+    return next(self.generator)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 580, in _stream_completion_with_retry
+    yield check_response(delta_resp)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 61, in check_response
+    raise ValueError(
+ValueError: request_id: 778d0105-9b8c-942d-9e0a-a8e815383ab9 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+During task with name 'model' and id '9e3ad439-ea2a-a911-a4fa-cd75637cf78b'
+2026-09-28 13:59:20 | INFO    | smart_agent | [chat] 自动新建会话 id=27 customer=1
+2026-09-28 13:59:20 | INFO    | smart_agent | [agent] build完成 customer=1 conv=27 tools=7 recent_msgs=0
+2026-09-28 13:59:21 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 13:59:23 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 13:59:23 | INFO    | smart_agent | [chat] 自动新建会话 id=28 customer=1
+2026-09-28 13:59:23 | INFO    | smart_agent | [agent] build完成 customer=1 conv=28 tools=7 recent_msgs=0
+2026-09-28 13:59:23 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 13:59:24 | INFO    | smart_agent | [ToolCall] -> rag_summarize args={'query': '智扫通Pro X1 日常保养注意事项'}
+2026-09-28 13:59:25 | INFO    | smart_agent | [ToolCall] <- rag_summarize result=根据现有知识库未找到相关信息。
+2026-09-28 13:59:25 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 13:59:30 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 13:59:31 | INFO    | smart_agent | [chat] 自动新建会话 id=29 customer=1
+2026-09-28 13:59:31 | INFO    | smart_agent | [agent] build完成 customer=1 conv=29 tools=7 recent_msgs=0
+2026-09-28 13:59:31 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 13:59:32 | INFO    | smart_agent | [ToolCall] -> amap_weather args={'city': '上海浦东新区'}
+2026-09-28 13:59:32 | INFO    | smart_agent | [ToolCall] <- amap_weather result=未查询到城市「上海浦东新区」的天气数据。
+2026-09-28 13:59:32 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 13:59:33 | INFO    | smart_agent | [ToolCall] -> amap_weather args={'city': '上海'}
+2026-09-28 13:59:33 | INFO    | smart_agent | [ToolCall] <- amap_weather result=【上海 天气】
+未来预报：
+  2026-09-28（周1）：白天阴 27℃ / 夜间小雨 23℃，东北风1-3级
+  2026-09-29（周2）：白天小雨 26℃ / 夜间中雨 23℃，东风1-3级
+  2026-09-30（周3）：白天小雨 26℃ / 夜间阴 21℃，东风1-3级
+  2026-10-01（周4）：白天小雨 25℃ / 夜间阴 20℃，北风1-3级
+2026-09-28 13:59:33 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 6
+2026-09-28 13:59:35 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 13:59:36 | INFO    | smart_agent | [chat] 自动新建会话 id=30 customer=1
+2026-09-28 13:59:36 | INFO    | smart_agent | [agent] build完成 customer=1 conv=30 tools=7 recent_msgs=0
+2026-09-28 13:59:36 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 13:59:37 | INFO    | smart_agent | [ToolCall] -> rag_summarize args={'query': '扫地机器人避障能力选购指南'}
+2026-09-28 13:59:40 | INFO    | smart_agent | [ToolCall] <- rag_summarize result=根据参考资料，扫地机器人避障能力的选购指南如下：
+
+- **优先选择3D结构光避障**：其识别精度优于红外避障，能有效避开细小杂物。
+- **带宠物家庭更应重视此配置**：因宠物易产生毛发、玩具等障碍物，3D结构光避障可提升清洁效率并减少卡困风险。
+2026-09-28 13:59:40 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 13:59:44 | INFO    | smart_agent | [memory] customer=1 新写入 2 条长期记忆
+2026-09-28 13:59:44 | INFO    | smart_agent | [chat] 自动新建会话 id=31 customer=1
+2026-09-28 13:59:44 | INFO    | smart_agent | [agent] build完成 customer=1 conv=31 tools=7 recent_msgs=0
+2026-09-28 13:59:45 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 13:59:46 | INFO    | smart_agent | [ToolCall] -> amap_geocode args={'address': '广州市天河区'}
+2026-09-28 13:59:46 | INFO    | smart_agent | [ToolCall] <- amap_geocode result=地址解析结果：
+- 标准化地址：广东省广州市天河区
+- 经纬度（高德GCJ02）：113.361597,23.124817
+- 省份：广东省
+- 城市：广州市
+- 区县：天河区
+2026-09-28 13:59:46 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 13:59:48 | INFO    | smart_agent | [ToolCall] -> amap_around_search args={'keyword': '公园'}
+2026-09-28 13:59:48 | INFO    | smart_agent | [ToolCall] <- amap_around_search result=Error invoking tool 'amap_around_search' with kwargs {'keyword': '公园'} with error:
+ location: Field required
+ Please fix the error and try again.
+2026-09-28 13:59:48 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 6
+2026-09-28 13:59:48 | ERROR   | smart_agent | [agent] 流式执行异常: request_id: 0aef33a6-0f39-9bf8-a21a-60d1aa60d8d8 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+Traceback (most recent call last):
+  File "/app/app/agent/react_agent.py", line 227, in execute_stream
+    async for chunk, metadata in self.agent.astream(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3440, in astream
+    async for _ in runner.atick(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 557, in atick
+    _panic_or_proceed(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 687, in _panic_or_proceed
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 744, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 756, in ainvoke
+    input = await asyncio.create_task(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 522, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1534, in amodel_node
+    model_response = await _execute_model_async(request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1505, in _execute_model_async
+    output = await model_.ainvoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6027, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2136, in _agenerate_with_cache
+    async for chunk in self._astream(messages, stop=stop, **kwargs):
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 765, in _astream
+    async for stream_resp, is_last_chunk in agenerate_with_last_element_mark(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 152, in agenerate_with_last_element_mark
+    item = await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 646, in astream_completion_with_retry
+    async for chunk in _AioTongyiGenerator(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 632, in __anext__
+    value = await asyncio.get_running_loop().run_in_executor(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 642, in _safe_next
+    return next(self.generator)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 580, in _stream_completion_with_retry
+    yield check_response(delta_resp)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 61, in check_response
+    raise ValueError(
+ValueError: request_id: 0aef33a6-0f39-9bf8-a21a-60d1aa60d8d8 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+During task with name 'model' and id '36e9b8d9-2ac4-04e3-01f9-93f37ef4fadd'
+2026-09-28 13:59:48 | ERROR   | smart_agent | SSE 流式聊天异常
+Traceback (most recent call last):
+  File "/app/app/api/chat.py", line 84, in event_generator
+    async for chunk in ChatService.stream_chat(
+  File "/app/app/services/chat_service.py", line 80, in stream_chat
+    async for chunk in agent.execute_stream(query, db):
+  File "/app/app/agent/react_agent.py", line 227, in execute_stream
+    async for chunk, metadata in self.agent.astream(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3440, in astream
+    async for _ in runner.atick(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 557, in atick
+    _panic_or_proceed(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 687, in _panic_or_proceed
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 744, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 756, in ainvoke
+    input = await asyncio.create_task(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 522, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1534, in amodel_node
+    model_response = await _execute_model_async(request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1505, in _execute_model_async
+    output = await model_.ainvoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6027, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2136, in _agenerate_with_cache
+    async for chunk in self._astream(messages, stop=stop, **kwargs):
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 765, in _astream
+    async for stream_resp, is_last_chunk in agenerate_with_last_element_mark(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 152, in agenerate_with_last_element_mark
+    item = await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 646, in astream_completion_with_retry
+    async for chunk in _AioTongyiGenerator(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 632, in __anext__
+    value = await asyncio.get_running_loop().run_in_executor(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 642, in _safe_next
+    return next(self.generator)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 580, in _stream_completion_with_retry
+    yield check_response(delta_resp)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 61, in check_response
+    raise ValueError(
+ValueError: request_id: 0aef33a6-0f39-9bf8-a21a-60d1aa60d8d8 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+During task with name 'model' and id '36e9b8d9-2ac4-04e3-01f9-93f37ef4fadd'
+2026-09-28 13:59:49 | INFO    | smart_agent | [chat] 自动新建会话 id=32 customer=1
+2026-09-28 13:59:49 | INFO    | smart_agent | [agent] build完成 customer=1 conv=32 tools=7 recent_msgs=0
+2026-09-28 13:59:50 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:00:14 | INFO    | smart_agent | 初始化 Chroma 向量库: dir=/app/data/chroma_db, collection=agent_knowledge
+2026-09-28 14:00:14 | INFO    | smart_agent | 初始化 Embeddings: text-embedding-v4
+2026-09-28 14:00:16 | INFO    | smart_agent | 初始化 ChatModel: qwen3-max
+2026-09-28 14:01:00 | INFO    | smart_agent | 数据库表结构检查完成
+2026-09-28 14:01:00 | INFO    | smart_agent | 数据库表结构检查完成
+2026-09-28 14:01:00 | INFO    | smart_agent | 默认管理员已存在，跳过创建
+2026-09-28 14:01:00 | INFO    | smart_agent | 默认管理员已存在，跳过创建
+2026-09-28 14:01:00 | INFO    | smart_agent | 动态工具加载：DB 中启用工具 7 个
+2026-09-28 14:01:00 | INFO    | smart_agent | 动态工具注册完成，共 7 个可用工具
+2026-09-28 14:01:00 | INFO    | smart_agent | 动态工具加载：DB 中启用工具 7 个
+2026-09-28 14:01:00 | INFO    | smart_agent | 动态工具注册完成，共 7 个可用工具
+2026-09-28 14:01:00 | INFO    | smart_agent | 动态工具注册表加载完成
+2026-09-28 14:01:24 | INFO    | smart_agent | 初始化 Chroma 向量库: dir=/app/data/chroma_db, collection=agent_knowledge
+2026-09-28 14:01:24 | INFO    | smart_agent | 初始化 Embeddings: text-embedding-v4
+2026-09-28 14:01:26 | INFO    | smart_agent | 已清空向量集合，开始重新入库
+2026-09-28 14:01:26 | INFO    | smart_agent | 扫地机器人100问.pdf 解析完成，共 8 页
+2026-09-28 14:01:28 | INFO    | smart_agent | 向量化写入 16 条文档片段
+2026-09-28 14:01:28 | INFO    | smart_agent | 入库 扫地机器人100问.pdf：5112 字 → 16 个片段
+2026-09-28 14:01:29 | INFO    | smart_agent | 向量化写入 20 条文档片段
+2026-09-28 14:01:29 | INFO    | smart_agent | 入库 扫地机器人100问2.txt：7058 字 → 20 个片段
+2026-09-28 14:01:31 | INFO    | smart_agent | 向量化写入 20 条文档片段
+2026-09-28 14:01:31 | INFO    | smart_agent | 入库 扫拖一体机器人100问.txt：7980 字 → 20 个片段
+2026-09-28 14:01:33 | INFO    | smart_agent | 向量化写入 37 条文档片段
+2026-09-28 14:01:33 | INFO    | smart_agent | 入库 故障排除.txt：15078 字 → 37 个片段
+2026-09-28 14:01:35 | INFO    | smart_agent | 向量化写入 22 条文档片段
+2026-09-28 14:01:35 | INFO    | smart_agent | 入库 维护保养.txt：8927 字 → 22 个片段
+2026-09-28 14:01:37 | INFO    | smart_agent | 向量化写入 20 条文档片段
+2026-09-28 14:01:37 | INFO    | smart_agent | 入库 选购指南.txt：8629 字 → 20 个片段
+2026-09-28 14:01:37 | INFO    | smart_agent | 知识库入库完成：6 个文件，共 135 个片段
+2026-09-28 14:01:37 | INFO    | smart_agent | 入库自检：检索到 3 条片段
+2026-09-28 14:01:37 | INFO    | smart_agent |   - 来源=扫地机器人100问2.txt 片段='# 扫地机器人常见问题及解答（100条）\n### 基础使用类\n1. **首次使用'
+2026-09-28 14:01:37 | INFO    | smart_agent |   - 来源=扫地机器人100问2.txt 片段='- 检查尘盒、滤网是否堵塞，电量是否不足，机身传感器是否被灰尘遮挡，清洁后重试。'
+2026-09-28 14:01:37 | INFO    | smart_agent |   - 来源=故障排除.txt 片段='198. 故障现象：拖地时拖布旋转不均匀，部分区域未拖到；检测：拖布电机是否故障'
+2026-09-28 14:02:13 | INFO    | smart_agent | 数据库表结构检查完成
+2026-09-28 14:02:13 | INFO    | smart_agent | 默认管理员已存在，跳过创建
+2026-09-28 14:02:13 | INFO    | smart_agent | 数据库表结构检查完成
+2026-09-28 14:02:13 | INFO    | smart_agent | 动态工具加载：DB 中启用工具 7 个
+2026-09-28 14:02:13 | INFO    | smart_agent | 动态工具注册完成，共 7 个可用工具
+2026-09-28 14:02:13 | INFO    | smart_agent | 动态工具注册表加载完成
+2026-09-28 14:02:13 | INFO    | smart_agent | 默认管理员已存在，跳过创建
+2026-09-28 14:02:13 | INFO    | smart_agent | 动态工具加载：DB 中启用工具 7 个
+2026-09-28 14:02:13 | INFO    | smart_agent | 动态工具注册完成，共 7 个可用工具
+2026-09-28 14:02:13 | INFO    | smart_agent | 动态工具注册表加载完成
+2026-09-28 14:02:32 | INFO    | smart_agent | 初始化 Chroma 向量库: dir=/app/data/chroma_db, collection=agent_knowledge
+2026-09-28 14:02:32 | INFO    | smart_agent | 初始化 Embeddings: text-embedding-v4
+2026-09-28 14:02:35 | INFO    | smart_agent | 已清空 135 条旧片段（保留 collection，不影响运行中的后端）
+2026-09-28 14:02:36 | INFO    | smart_agent | 扫地机器人100问.pdf 解析完成，共 8 页
+2026-09-28 14:02:38 | INFO    | smart_agent | 向量化写入 16 条文档片段
+2026-09-28 14:02:38 | INFO    | smart_agent | 入库 扫地机器人100问.pdf：5112 字 → 16 个片段
+2026-09-28 14:02:39 | INFO    | smart_agent | 向量化写入 20 条文档片段
+2026-09-28 14:02:39 | INFO    | smart_agent | 入库 扫地机器人100问2.txt：7058 字 → 20 个片段
+2026-09-28 14:02:41 | INFO    | smart_agent | 向量化写入 20 条文档片段
+2026-09-28 14:02:41 | INFO    | smart_agent | 入库 扫拖一体机器人100问.txt：7980 字 → 20 个片段
+2026-09-28 14:02:44 | INFO    | smart_agent | 向量化写入 37 条文档片段
+2026-09-28 14:02:44 | INFO    | smart_agent | 入库 故障排除.txt：15078 字 → 37 个片段
+2026-09-28 14:02:46 | INFO    | smart_agent | 向量化写入 22 条文档片段
+2026-09-28 14:02:46 | INFO    | smart_agent | 入库 维护保养.txt：8927 字 → 22 个片段
+2026-09-28 14:02:48 | INFO    | smart_agent | 向量化写入 20 条文档片段
+2026-09-28 14:02:48 | INFO    | smart_agent | 入库 选购指南.txt：8629 字 → 20 个片段
+2026-09-28 14:02:48 | INFO    | smart_agent | 知识库入库完成：6 个文件，共 135 个片段
+2026-09-28 14:02:48 | INFO    | smart_agent | 入库自检：检索到 3 条片段
+2026-09-28 14:02:48 | INFO    | smart_agent |   - 来源=扫地机器人100问2.txt 片段='# 扫地机器人常见问题及解答（100条）\n### 基础使用类\n1. **首次使用'
+2026-09-28 14:02:48 | INFO    | smart_agent |   - 来源=扫地机器人100问2.txt 片段='- 检查尘盒、滤网是否堵塞，电量是否不足，机身传感器是否被灰尘遮挡，清洁后重试。'
+2026-09-28 14:02:48 | INFO    | smart_agent |   - 来源=故障排除.txt 片段='198. 故障现象：拖地时拖布旋转不均匀，部分区域未拖到；检测：拖布电机是否故障'
+2026-09-28 14:02:58 | INFO    | smart_agent | 初始化 ChatModel: qwen3-max
+2026-09-28 14:02:59 | INFO    | smart_agent | [chat] 自动新建会话 id=33 customer=1
+2026-09-28 14:02:59 | INFO    | smart_agent | 初始化 ChatModel: qwen3-max
+2026-09-28 14:02:59 | INFO    | smart_agent | [agent] build完成 customer=1 conv=33 tools=7 recent_msgs=0
+2026-09-28 14:02:59 | INFO    | smart_agent | 初始化 Embeddings: text-embedding-v4
+2026-09-28 14:02:59 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:03:01 | INFO    | smart_agent | [ToolCall] -> rag_summarize args={'query': '扫地机器人工作时异响原因及处理方法'}
+2026-09-28 14:03:01 | INFO    | smart_agent | 初始化 Chroma 向量库: dir=/app/data/chroma_db, collection=agent_knowledge
+2026-09-28 14:03:06 | INFO    | smart_agent | [ToolCall] <- rag_summarize result=扫地机器人工作时出现异响的原因及处理方法如下：
+
+1. **主刷旋转时发出“咔咔”异响**  
+   - **原因**：主刷夹杂硬物、滚刷轴承卡顿、主刷胶条磨损。  
+   - **处理方法**：清理硬物、润滑轴承、更换磨损胶条。（参考条目48）
+
+2. **边刷旋转时与机身摩擦产生异响**  
+   - **原因**：边刷安装过紧、边刷变形、机身有杂物。  
+   - **处理方法**：调整边刷安装松紧度、更换变形边刷、清理机身杂物。（参考条目194）
+
+3. **机器人工作时噪音过大（可能包含异响）**  
+   - **原因**：主刷或边刷缠绕杂物、轮组卡顿、电机故障。  
+   - **处理方法**：清理缠绕物、润滑轮组；若为电机异响，需联系售后。（参考条目31）
+2026-09-28 14:03:06 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:03:12 | INFO    | smart_agent | [memory] customer=1 新写入 2 条长期记忆
+2026-09-28 14:03:13 | INFO    | smart_agent | [chat] 自动新建会话 id=34 customer=1
+2026-09-28 14:03:13 | INFO    | smart_agent | [agent] build完成 customer=1 conv=34 tools=7 recent_msgs=0
+2026-09-28 14:03:13 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:03:14 | INFO    | smart_agent | [ToolCall] -> amap_weather args={'city': '北京'}
+2026-09-28 14:03:14 | INFO    | smart_agent | [ToolCall] <- amap_weather result=【北京 天气】
+未来预报：
+  2026-09-28（周1）：白天多云 24℃ / 夜间小雨 17℃，南风1-3级
+  2026-09-29（周2）：白天多云 25℃ / 夜间多云 14℃，南风1-3级
+  2026-09-30（周3）：白天晴 19℃ / 夜间晴 10℃，西北风1-3级
+  2026-10-01（周4）：白天晴 21℃ / 夜间晴 8℃，西南风1-3级
+2026-09-28 14:03:14 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:03:17 | INFO    | smart_agent | [chat] 自动新建会话 id=35 customer=1
+2026-09-28 14:03:17 | INFO    | smart_agent | [agent] build完成 customer=1 conv=35 tools=7 recent_msgs=0
+2026-09-28 14:03:18 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:03:18 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 14:03:19 | INFO    | smart_agent | [ToolCall] -> amap_geocode args={'address': '深圳市南山区科技园', 'city': '深圳'}
+2026-09-28 14:03:19 | INFO    | smart_agent | [ToolCall] <- amap_geocode result=地址解析结果：
+- 标准化地址：广东省深圳市南山区科技园
+- 经纬度（高德GCJ02）：113.946040,22.544610
+- 省份：广东省
+- 城市：深圳市
+- 区县：南山区
+2026-09-28 14:03:19 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:03:21 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 14:03:22 | INFO    | smart_agent | [chat] 自动新建会话 id=36 customer=1
+2026-09-28 14:03:22 | INFO    | smart_agent | 初始化 ChatModel: qwen3-max
+2026-09-28 14:03:22 | INFO    | smart_agent | [agent] build完成 customer=1 conv=36 tools=7 recent_msgs=0
+2026-09-28 14:03:22 | INFO    | smart_agent | 初始化 Embeddings: text-embedding-v4
+2026-09-28 14:03:23 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:03:24 | INFO    | smart_agent | [ToolCall] -> amap_geocode args={'address': '杭州市西湖区'}
+2026-09-28 14:03:24 | INFO    | smart_agent | [ToolCall] <- amap_geocode result=地址解析结果：
+- 标准化地址：浙江省杭州市西湖区
+- 经纬度（高德GCJ02）：120.130396,30.259242
+- 省份：浙江省
+- 城市：杭州市
+- 区县：西湖区
+2026-09-28 14:03:24 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:03:26 | INFO    | smart_agent | [ToolCall] -> amap_around_search args={'keyword': '家电维修'}
+2026-09-28 14:03:26 | INFO    | smart_agent | [ToolCall] <- amap_around_search result=Error invoking tool 'amap_around_search' with kwargs {'keyword': '家电维修'} with error:
+ location: Field required
+ Please fix the error and try again.
+2026-09-28 14:03:26 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 6
+2026-09-28 14:03:26 | ERROR   | smart_agent | [agent] 流式执行异常: request_id: 9b41d712-13c7-9f70-9b5d-7f1e2edba77e 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+Traceback (most recent call last):
+  File "/app/app/agent/react_agent.py", line 227, in execute_stream
+    async for chunk, metadata in self.agent.astream(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3440, in astream
+    async for _ in runner.atick(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 557, in atick
+    _panic_or_proceed(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 687, in _panic_or_proceed
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 744, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 756, in ainvoke
+    input = await asyncio.create_task(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 522, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1534, in amodel_node
+    model_response = await _execute_model_async(request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1505, in _execute_model_async
+    output = await model_.ainvoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6027, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2136, in _agenerate_with_cache
+    async for chunk in self._astream(messages, stop=stop, **kwargs):
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 765, in _astream
+    async for stream_resp, is_last_chunk in agenerate_with_last_element_mark(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 152, in agenerate_with_last_element_mark
+    item = await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 646, in astream_completion_with_retry
+    async for chunk in _AioTongyiGenerator(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 632, in __anext__
+    value = await asyncio.get_running_loop().run_in_executor(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 642, in _safe_next
+    return next(self.generator)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 580, in _stream_completion_with_retry
+    yield check_response(delta_resp)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 61, in check_response
+    raise ValueError(
+ValueError: request_id: 9b41d712-13c7-9f70-9b5d-7f1e2edba77e 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+During task with name 'model' and id 'e8781aca-41f6-9df3-b3fc-c3458dae766e'
+2026-09-28 14:03:26 | ERROR   | smart_agent | SSE 流式聊天异常
+Traceback (most recent call last):
+  File "/app/app/api/chat.py", line 84, in event_generator
+    async for chunk in ChatService.stream_chat(
+  File "/app/app/services/chat_service.py", line 80, in stream_chat
+    async for chunk in agent.execute_stream(query, db):
+  File "/app/app/agent/react_agent.py", line 227, in execute_stream
+    async for chunk, metadata in self.agent.astream(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3440, in astream
+    async for _ in runner.atick(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 557, in atick
+    _panic_or_proceed(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 687, in _panic_or_proceed
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 744, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 756, in ainvoke
+    input = await asyncio.create_task(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 522, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1534, in amodel_node
+    model_response = await _execute_model_async(request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1505, in _execute_model_async
+    output = await model_.ainvoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6027, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2136, in _agenerate_with_cache
+    async for chunk in self._astream(messages, stop=stop, **kwargs):
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 765, in _astream
+    async for stream_resp, is_last_chunk in agenerate_with_last_element_mark(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 152, in agenerate_with_last_element_mark
+    item = await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 646, in astream_completion_with_retry
+    async for chunk in _AioTongyiGenerator(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 632, in __anext__
+    value = await asyncio.get_running_loop().run_in_executor(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 642, in _safe_next
+    return next(self.generator)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 580, in _stream_completion_with_retry
+    yield check_response(delta_resp)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 61, in check_response
+    raise ValueError(
+ValueError: request_id: 9b41d712-13c7-9f70-9b5d-7f1e2edba77e 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+During task with name 'model' and id 'e8781aca-41f6-9df3-b3fc-c3458dae766e'
+2026-09-28 14:03:27 | INFO    | smart_agent | [chat] 自动新建会话 id=37 customer=1
+2026-09-28 14:03:27 | INFO    | smart_agent | [agent] build完成 customer=1 conv=37 tools=7 recent_msgs=0
+2026-09-28 14:03:27 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:03:29 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 14:03:30 | INFO    | smart_agent | [chat] 自动新建会话 id=38 customer=1
+2026-09-28 14:03:30 | INFO    | smart_agent | [agent] build完成 customer=1 conv=38 tools=7 recent_msgs=0
+2026-09-28 14:03:30 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:03:31 | INFO    | smart_agent | [ToolCall] -> rag_summarize args={'query': '智扫通Pro X1 日常保养注意事项'}
+2026-09-28 14:03:32 | INFO    | smart_agent | [ToolCall] <- rag_summarize result=根据现有知识库未找到相关信息。
+2026-09-28 14:03:32 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:03:38 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 14:03:38 | INFO    | smart_agent | [chat] 自动新建会话 id=39 customer=1
+2026-09-28 14:03:38 | INFO    | smart_agent | [agent] build完成 customer=1 conv=39 tools=7 recent_msgs=0
+2026-09-28 14:03:38 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:03:39 | INFO    | smart_agent | [ToolCall] -> amap_weather args={'city': '上海浦东新区'}
+2026-09-28 14:03:39 | INFO    | smart_agent | [ToolCall] <- amap_weather result=未查询到城市「上海浦东新区」的天气数据。
+2026-09-28 14:03:39 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:03:41 | INFO    | smart_agent | [ToolCall] -> amap_weather args={'city': '上海'}
+2026-09-28 14:03:41 | INFO    | smart_agent | [ToolCall] <- amap_weather result=【上海 天气】
+未来预报：
+  2026-09-28（周1）：白天阴 27℃ / 夜间小雨 23℃，东北风1-3级
+  2026-09-29（周2）：白天小雨 26℃ / 夜间中雨 23℃，东风1-3级
+  2026-09-30（周3）：白天小雨 26℃ / 夜间阴 21℃，东风1-3级
+  2026-10-01（周4）：白天小雨 25℃ / 夜间阴 20℃，北风1-3级
+2026-09-28 14:03:41 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 6
+2026-09-28 14:03:43 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 14:03:44 | INFO    | smart_agent | [chat] 自动新建会话 id=40 customer=1
+2026-09-28 14:03:44 | INFO    | smart_agent | [agent] build完成 customer=1 conv=40 tools=7 recent_msgs=0
+2026-09-28 14:03:45 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:03:46 | INFO    | smart_agent | [ToolCall] -> rag_summarize args={'query': '扫地机器人避障能力选购指南'}
+2026-09-28 14:03:48 | INFO    | smart_agent | [ToolCall] <- rag_summarize result=根据参考资料，扫地机器人避障能力的选购指南如下：
+
+- **优先选择3D结构光避障**：其识别精度优于红外避障，能有效避开细小杂物。
+- **带宠物家庭更应重视此配置**：因宠物易产生毛发、玩具等障碍物，3D结构光避障可提升清扫效率并减少卡困风险。
+2026-09-28 14:03:48 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:03:52 | INFO    | smart_agent | [memory] customer=1 新写入 2 条长期记忆
+2026-09-28 14:03:53 | INFO    | smart_agent | [chat] 自动新建会话 id=41 customer=1
+2026-09-28 14:03:53 | INFO    | smart_agent | [agent] build完成 customer=1 conv=41 tools=7 recent_msgs=0
+2026-09-28 14:03:53 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:03:54 | INFO    | smart_agent | [ToolCall] -> amap_geocode args={'address': '广州市天河区'}
+2026-09-28 14:03:54 | INFO    | smart_agent | [ToolCall] <- amap_geocode result=地址解析结果：
+- 标准化地址：广东省广州市天河区
+- 经纬度（高德GCJ02）：113.361597,23.124817
+- 省份：广东省
+- 城市：广州市
+- 区县：天河区
+2026-09-28 14:03:54 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:03:55 | INFO    | smart_agent | [ToolCall] -> amap_around_search args={'keyword': '公园'}
+2026-09-28 14:03:55 | INFO    | smart_agent | [ToolCall] <- amap_around_search result=Error invoking tool 'amap_around_search' with kwargs {'keyword': '公园'} with error:
+ location: Field required
+ Please fix the error and try again.
+2026-09-28 14:03:56 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 6
+2026-09-28 14:03:56 | ERROR   | smart_agent | [agent] 流式执行异常: request_id: c28f65c0-06b8-9e1f-847d-60e24a0895eb 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+Traceback (most recent call last):
+  File "/app/app/agent/react_agent.py", line 227, in execute_stream
+    async for chunk, metadata in self.agent.astream(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3440, in astream
+    async for _ in runner.atick(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 557, in atick
+    _panic_or_proceed(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 687, in _panic_or_proceed
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 744, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 756, in ainvoke
+    input = await asyncio.create_task(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 522, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1534, in amodel_node
+    model_response = await _execute_model_async(request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1505, in _execute_model_async
+    output = await model_.ainvoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6027, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2136, in _agenerate_with_cache
+    async for chunk in self._astream(messages, stop=stop, **kwargs):
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 765, in _astream
+    async for stream_resp, is_last_chunk in agenerate_with_last_element_mark(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 152, in agenerate_with_last_element_mark
+    item = await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 646, in astream_completion_with_retry
+    async for chunk in _AioTongyiGenerator(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 632, in __anext__
+    value = await asyncio.get_running_loop().run_in_executor(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 642, in _safe_next
+    return next(self.generator)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 580, in _stream_completion_with_retry
+    yield check_response(delta_resp)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 61, in check_response
+    raise ValueError(
+ValueError: request_id: c28f65c0-06b8-9e1f-847d-60e24a0895eb 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+During task with name 'model' and id 'fbbaece8-9593-effa-b489-71c3b49eeb47'
+2026-09-28 14:03:56 | ERROR   | smart_agent | SSE 流式聊天异常
+Traceback (most recent call last):
+  File "/app/app/api/chat.py", line 84, in event_generator
+    async for chunk in ChatService.stream_chat(
+  File "/app/app/services/chat_service.py", line 80, in stream_chat
+    async for chunk in agent.execute_stream(query, db):
+  File "/app/app/agent/react_agent.py", line 227, in execute_stream
+    async for chunk, metadata in self.agent.astream(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3440, in astream
+    async for _ in runner.atick(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 557, in atick
+    _panic_or_proceed(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 687, in _panic_or_proceed
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 744, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 756, in ainvoke
+    input = await asyncio.create_task(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 522, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1534, in amodel_node
+    model_response = await _execute_model_async(request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1505, in _execute_model_async
+    output = await model_.ainvoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6027, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2136, in _agenerate_with_cache
+    async for chunk in self._astream(messages, stop=stop, **kwargs):
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 765, in _astream
+    async for stream_resp, is_last_chunk in agenerate_with_last_element_mark(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 152, in agenerate_with_last_element_mark
+    item = await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 646, in astream_completion_with_retry
+    async for chunk in _AioTongyiGenerator(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 632, in __anext__
+    value = await asyncio.get_running_loop().run_in_executor(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 642, in _safe_next
+    return next(self.generator)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 580, in _stream_completion_with_retry
+    yield check_response(delta_resp)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 61, in check_response
+    raise ValueError(
+ValueError: request_id: c28f65c0-06b8-9e1f-847d-60e24a0895eb 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+During task with name 'model' and id 'fbbaece8-9593-effa-b489-71c3b49eeb47'
+2026-09-28 14:03:57 | INFO    | smart_agent | [chat] 自动新建会话 id=42 customer=1
+2026-09-28 14:03:57 | INFO    | smart_agent | [agent] build完成 customer=1 conv=42 tools=7 recent_msgs=0
+2026-09-28 14:03:57 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:04:46 | INFO    | smart_agent | 初始化 ChatModel: qwen3-max
+2026-09-28 14:04:47 | INFO    | smart_agent | [chat] 自动新建会话 id=43 customer=1
+2026-09-28 14:04:47 | INFO    | smart_agent | [agent] build完成 customer=1 conv=43 tools=7 recent_msgs=0
+2026-09-28 14:04:47 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:04:48 | INFO    | smart_agent | [ToolCall] -> rag_summarize args={'query': '智扫通Pro X1 工作时异响 原因'}
+2026-09-28 14:04:49 | INFO    | smart_agent | [ToolCall] <- rag_summarize result=根据现有知识库未找到相关信息。
+2026-09-28 14:04:49 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:04:52 | INFO    | smart_agent | [chat] 自动新建会话 id=44 customer=1
+2026-09-28 14:04:52 | INFO    | smart_agent | [agent] build完成 customer=1 conv=44 tools=7 recent_msgs=0
+2026-09-28 14:04:53 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:04:53 | INFO    | smart_agent | [memory] customer=1 新写入 2 条长期记忆
+2026-09-28 14:04:54 | INFO    | smart_agent | [ToolCall] -> amap_weather args={'city': '北京'}
+2026-09-28 14:04:54 | INFO    | smart_agent | [ToolCall] <- amap_weather result=【北京 天气】
+未来预报：
+  2026-09-28（周1）：白天多云 24℃ / 夜间小雨 17℃，南风1-3级
+  2026-09-29（周2）：白天多云 25℃ / 夜间多云 14℃，南风1-3级
+  2026-09-30（周3）：白天晴 19℃ / 夜间晴 10℃，西北风1-3级
+  2026-10-01（周4）：白天晴 21℃ / 夜间晴 8℃，西南风1-3级
+2026-09-28 14:04:54 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:04:56 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 14:04:58 | INFO    | smart_agent | [chat] 自动新建会话 id=45 customer=1
+2026-09-28 14:04:58 | INFO    | smart_agent | [agent] build完成 customer=1 conv=45 tools=7 recent_msgs=0
+2026-09-28 14:04:58 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:04:59 | INFO    | smart_agent | [ToolCall] -> amap_geocode args={'address': '深圳市南山区科技园', 'city': '深圳'}
+2026-09-28 14:04:59 | INFO    | smart_agent | [ToolCall] <- amap_geocode result=地址解析结果：
+- 标准化地址：广东省深圳市南山区科技园
+- 经纬度（高德GCJ02）：113.946040,22.544610
+- 省份：广东省
+- 城市：深圳市
+- 区县：南山区
+2026-09-28 14:04:59 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:05:02 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 14:05:03 | INFO    | smart_agent | [chat] 自动新建会话 id=46 customer=1
+2026-09-28 14:05:03 | INFO    | smart_agent | [agent] build完成 customer=1 conv=46 tools=7 recent_msgs=0
+2026-09-28 14:05:03 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:05:05 | INFO    | smart_agent | [ToolCall] -> amap_geocode args={'address': '杭州市西湖区'}
+2026-09-28 14:05:05 | INFO    | smart_agent | [ToolCall] <- amap_geocode result=地址解析结果：
+- 标准化地址：浙江省杭州市西湖区
+- 经纬度（高德GCJ02）：120.130396,30.259242
+- 省份：浙江省
+- 城市：杭州市
+- 区县：西湖区
+2026-09-28 14:05:05 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:05:07 | INFO    | smart_agent | [ToolCall] -> amap_around_search args={'keyword': '家电维修'}
+2026-09-28 14:05:07 | INFO    | smart_agent | [ToolCall] <- amap_around_search result=Error invoking tool 'amap_around_search' with kwargs {'keyword': '家电维修'} with error:
+ location: Field required
+ Please fix the error and try again.
+2026-09-28 14:05:07 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 6
+2026-09-28 14:05:07 | ERROR   | smart_agent | [agent] 流式执行异常: request_id: cde2234d-06ca-96b8-b6c8-2096956e701b 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+Traceback (most recent call last):
+  File "/app/app/agent/react_agent.py", line 227, in execute_stream
+    async for chunk, metadata in self.agent.astream(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3440, in astream
+    async for _ in runner.atick(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 557, in atick
+    _panic_or_proceed(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 687, in _panic_or_proceed
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 744, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 756, in ainvoke
+    input = await asyncio.create_task(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 522, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1534, in amodel_node
+    model_response = await _execute_model_async(request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1505, in _execute_model_async
+    output = await model_.ainvoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6027, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2136, in _agenerate_with_cache
+    async for chunk in self._astream(messages, stop=stop, **kwargs):
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 765, in _astream
+    async for stream_resp, is_last_chunk in agenerate_with_last_element_mark(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 152, in agenerate_with_last_element_mark
+    item = await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 646, in astream_completion_with_retry
+    async for chunk in _AioTongyiGenerator(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 632, in __anext__
+    value = await asyncio.get_running_loop().run_in_executor(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 642, in _safe_next
+    return next(self.generator)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 580, in _stream_completion_with_retry
+    yield check_response(delta_resp)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 61, in check_response
+    raise ValueError(
+ValueError: request_id: cde2234d-06ca-96b8-b6c8-2096956e701b 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+During task with name 'model' and id '3d15aa33-ee3f-d15a-7748-7a0183f90fb2'
+2026-09-28 14:05:07 | ERROR   | smart_agent | SSE 流式聊天异常
+Traceback (most recent call last):
+  File "/app/app/api/chat.py", line 84, in event_generator
+    async for chunk in ChatService.stream_chat(
+  File "/app/app/services/chat_service.py", line 80, in stream_chat
+    async for chunk in agent.execute_stream(query, db):
+  File "/app/app/agent/react_agent.py", line 227, in execute_stream
+    async for chunk, metadata in self.agent.astream(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3440, in astream
+    async for _ in runner.atick(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 557, in atick
+    _panic_or_proceed(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 687, in _panic_or_proceed
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 744, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 756, in ainvoke
+    input = await asyncio.create_task(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 522, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1534, in amodel_node
+    model_response = await _execute_model_async(request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1505, in _execute_model_async
+    output = await model_.ainvoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6027, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2136, in _agenerate_with_cache
+    async for chunk in self._astream(messages, stop=stop, **kwargs):
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 765, in _astream
+    async for stream_resp, is_last_chunk in agenerate_with_last_element_mark(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 152, in agenerate_with_last_element_mark
+    item = await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 646, in astream_completion_with_retry
+    async for chunk in _AioTongyiGenerator(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 632, in __anext__
+    value = await asyncio.get_running_loop().run_in_executor(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 642, in _safe_next
+    return next(self.generator)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 580, in _stream_completion_with_retry
+    yield check_response(delta_resp)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 61, in check_response
+    raise ValueError(
+ValueError: request_id: cde2234d-06ca-96b8-b6c8-2096956e701b 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+During task with name 'model' and id '3d15aa33-ee3f-d15a-7748-7a0183f90fb2'
+2026-09-28 14:05:08 | INFO    | smart_agent | [chat] 自动新建会话 id=47 customer=1
+2026-09-28 14:05:08 | INFO    | smart_agent | [agent] build完成 customer=1 conv=47 tools=7 recent_msgs=0
+2026-09-28 14:05:08 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:05:10 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 14:05:11 | INFO    | smart_agent | [chat] 自动新建会话 id=48 customer=1
+2026-09-28 14:05:11 | INFO    | smart_agent | [agent] build完成 customer=1 conv=48 tools=7 recent_msgs=0
+2026-09-28 14:05:12 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:05:13 | INFO    | smart_agent | [ToolCall] -> rag_summarize args={'query': '智扫通Pro X1 日常保养注意事项'}
+2026-09-28 14:05:14 | INFO    | smart_agent | [ToolCall] <- rag_summarize result=根据现有知识库未找到相关信息
+2026-09-28 14:05:14 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:05:18 | INFO    | smart_agent | [chat] 自动新建会话 id=49 customer=1
+2026-09-28 14:05:18 | INFO    | smart_agent | [agent] build完成 customer=1 conv=49 tools=7 recent_msgs=0
+2026-09-28 14:05:18 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 14:05:18 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:05:19 | INFO    | smart_agent | [ToolCall] -> amap_weather args={'city': '上海浦东新区'}
+2026-09-28 14:05:20 | INFO    | smart_agent | [ToolCall] <- amap_weather result=未查询到城市「上海浦东新区」的天气数据。
+2026-09-28 14:05:20 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:05:20 | INFO    | smart_agent | [ToolCall] -> amap_weather args={'city': '上海'}
+2026-09-28 14:05:21 | INFO    | smart_agent | [ToolCall] <- amap_weather result=【上海 天气】
+未来预报：
+  2026-09-28（周1）：白天阴 27℃ / 夜间小雨 23℃，东北风1-3级
+  2026-09-29（周2）：白天小雨 26℃ / 夜间中雨 23℃，东风1-3级
+  2026-09-30（周3）：白天小雨 26℃ / 夜间阴 21℃，东风1-3级
+  2026-10-01（周4）：白天小雨 25℃ / 夜间阴 20℃，北风1-3级
+2026-09-28 14:05:21 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 6
+2026-09-28 14:05:23 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 14:05:24 | INFO    | smart_agent | [chat] 自动新建会话 id=50 customer=1
+2026-09-28 14:05:24 | INFO    | smart_agent | [agent] build完成 customer=1 conv=50 tools=7 recent_msgs=0
+2026-09-28 14:05:25 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:05:26 | INFO    | smart_agent | [ToolCall] -> rag_summarize args={'query': '扫地机器人避障能力如何判断 选购指南'}
+2026-09-28 14:05:28 | INFO    | smart_agent | [ToolCall] <- rag_summarize result=根据参考资料，扫地机器人的避障能力可通过以下方式判断和选购：
+
+- **避障技术类型**：3D结构光避障的识别精度优于红外避障，能够有效避开细小杂物。
+- **适用场景建议**：带宠物的家庭应优先选择配备3D结构光避障的机型，以提升避障效果。
+
+因此，在选购时应重点关注是否采用3D结构光等高精度避障技术，尤其在有宠物或地面杂物较多的环境中。
+2026-09-28 14:05:28 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:05:33 | INFO    | smart_agent | [chat] 自动新建会话 id=51 customer=1
+2026-09-28 14:05:33 | INFO    | smart_agent | [agent] build完成 customer=1 conv=51 tools=7 recent_msgs=0
+2026-09-28 14:05:34 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:05:34 | INFO    | smart_agent | [memory] customer=1 新写入 3 条长期记忆
+2026-09-28 14:05:35 | INFO    | smart_agent | [ToolCall] -> amap_geocode args={'address': '广州市天河区'}
+2026-09-28 14:05:35 | INFO    | smart_agent | [ToolCall] <- amap_geocode result=地址解析结果：
+- 标准化地址：广东省广州市天河区
+- 经纬度（高德GCJ02）：113.361597,23.124817
+- 省份：广东省
+- 城市：广州市
+- 区县：天河区
+2026-09-28 14:05:35 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:05:37 | INFO    | smart_agent | [ToolCall] -> amap_around_search args={'keyword': '公园'}
+2026-09-28 14:05:37 | INFO    | smart_agent | [ToolCall] <- amap_around_search result=Error invoking tool 'amap_around_search' with kwargs {'keyword': '公园'} with error:
+ location: Field required
+ Please fix the error and try again.
+2026-09-28 14:05:37 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 6
+2026-09-28 14:05:37 | ERROR   | smart_agent | [agent] 流式执行异常: request_id: e5a0f4bd-686f-9b2c-9c42-062e5751519d 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+Traceback (most recent call last):
+  File "/app/app/agent/react_agent.py", line 227, in execute_stream
+    async for chunk, metadata in self.agent.astream(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3440, in astream
+    async for _ in runner.atick(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 557, in atick
+    _panic_or_proceed(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 687, in _panic_or_proceed
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 744, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 756, in ainvoke
+    input = await asyncio.create_task(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 522, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1534, in amodel_node
+    model_response = await _execute_model_async(request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1505, in _execute_model_async
+    output = await model_.ainvoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6027, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2136, in _agenerate_with_cache
+    async for chunk in self._astream(messages, stop=stop, **kwargs):
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 765, in _astream
+    async for stream_resp, is_last_chunk in agenerate_with_last_element_mark(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 152, in agenerate_with_last_element_mark
+    item = await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 646, in astream_completion_with_retry
+    async for chunk in _AioTongyiGenerator(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 632, in __anext__
+    value = await asyncio.get_running_loop().run_in_executor(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 642, in _safe_next
+    return next(self.generator)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 580, in _stream_completion_with_retry
+    yield check_response(delta_resp)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 61, in check_response
+    raise ValueError(
+ValueError: request_id: e5a0f4bd-686f-9b2c-9c42-062e5751519d 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+During task with name 'model' and id '285e416b-d80a-9112-c302-141a8ec350e2'
+2026-09-28 14:05:37 | ERROR   | smart_agent | SSE 流式聊天异常
+Traceback (most recent call last):
+  File "/app/app/api/chat.py", line 84, in event_generator
+    async for chunk in ChatService.stream_chat(
+  File "/app/app/services/chat_service.py", line 80, in stream_chat
+    async for chunk in agent.execute_stream(query, db):
+  File "/app/app/agent/react_agent.py", line 227, in execute_stream
+    async for chunk, metadata in self.agent.astream(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3440, in astream
+    async for _ in runner.atick(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 557, in atick
+    _panic_or_proceed(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 687, in _panic_or_proceed
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 744, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 756, in ainvoke
+    input = await asyncio.create_task(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 522, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1534, in amodel_node
+    model_response = await _execute_model_async(request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1505, in _execute_model_async
+    output = await model_.ainvoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6027, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2136, in _agenerate_with_cache
+    async for chunk in self._astream(messages, stop=stop, **kwargs):
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 765, in _astream
+    async for stream_resp, is_last_chunk in agenerate_with_last_element_mark(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 152, in agenerate_with_last_element_mark
+    item = await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 646, in astream_completion_with_retry
+    async for chunk in _AioTongyiGenerator(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 632, in __anext__
+    value = await asyncio.get_running_loop().run_in_executor(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 642, in _safe_next
+    return next(self.generator)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 580, in _stream_completion_with_retry
+    yield check_response(delta_resp)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 61, in check_response
+    raise ValueError(
+ValueError: request_id: e5a0f4bd-686f-9b2c-9c42-062e5751519d 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+During task with name 'model' and id '285e416b-d80a-9112-c302-141a8ec350e2'
+2026-09-28 14:05:38 | INFO    | smart_agent | [chat] 自动新建会话 id=52 customer=1
+2026-09-28 14:05:38 | INFO    | smart_agent | [agent] build完成 customer=1 conv=52 tools=7 recent_msgs=0
+2026-09-28 14:05:38 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:06:43 | INFO    | smart_agent | 初始化 ChatModel: qwen3-max
+2026-09-28 14:06:44 | INFO    | smart_agent | [chat] 自动新建会话 id=53 customer=1
+2026-09-28 14:06:44 | INFO    | smart_agent | [agent] build完成 customer=1 conv=53 tools=7 recent_msgs=0
+2026-09-28 14:06:44 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:06:45 | INFO    | smart_agent | [ToolCall] -> rag_summarize args={'query': '智扫通Pro X1 工作异响 原因'}
+2026-09-28 14:06:46 | INFO    | smart_agent | [ToolCall] <- rag_summarize result=根据现有知识库未找到相关信息。
+2026-09-28 14:06:46 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:06:50 | INFO    | smart_agent | [chat] 自动新建会话 id=54 customer=1
+2026-09-28 14:06:50 | INFO    | smart_agent | [agent] build完成 customer=1 conv=54 tools=7 recent_msgs=0
+2026-09-28 14:06:51 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:06:51 | INFO    | smart_agent | [memory] customer=1 新写入 2 条长期记忆
+2026-09-28 14:06:51 | INFO    | smart_agent | [ToolCall] -> amap_weather args={'city': '北京'}
+2026-09-28 14:06:52 | INFO    | smart_agent | [ToolCall] <- amap_weather result=【北京 天气】
+未来预报：
+  2026-09-28（周1）：白天多云 24℃ / 夜间小雨 17℃，南风1-3级
+  2026-09-29（周2）：白天多云 25℃ / 夜间多云 14℃，南风1-3级
+  2026-09-30（周3）：白天晴 19℃ / 夜间晴 10℃，西北风1-3级
+  2026-10-01（周4）：白天晴 21℃ / 夜间晴 8℃，西南风1-3级
+2026-09-28 14:06:52 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:06:54 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 14:06:55 | INFO    | smart_agent | [chat] 自动新建会话 id=55 customer=1
+2026-09-28 14:06:55 | INFO    | smart_agent | [agent] build完成 customer=1 conv=55 tools=7 recent_msgs=0
+2026-09-28 14:06:56 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:06:57 | INFO    | smart_agent | [ToolCall] -> amap_geocode args={'address': '深圳市南山区科技园', 'city': '深圳'}
+2026-09-28 14:06:57 | INFO    | smart_agent | [ToolCall] <- amap_geocode result=地址解析结果：
+- 标准化地址：广东省深圳市南山区科技园
+- 经纬度（高德GCJ02）：113.946040,22.544610
+- 省份：广东省
+- 城市：深圳市
+- 区县：南山区
+2026-09-28 14:06:57 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:06:59 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 14:07:00 | INFO    | smart_agent | [chat] 自动新建会话 id=56 customer=1
+2026-09-28 14:07:00 | INFO    | smart_agent | [agent] build完成 customer=1 conv=56 tools=7 recent_msgs=0
+2026-09-28 14:07:00 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:07:01 | INFO    | smart_agent | [ToolCall] -> amap_geocode args={'address': '杭州市西湖区'}
+2026-09-28 14:07:01 | INFO    | smart_agent | [ToolCall] <- amap_geocode result=地址解析结果：
+- 标准化地址：浙江省杭州市西湖区
+- 经纬度（高德GCJ02）：120.130396,30.259242
+- 省份：浙江省
+- 城市：杭州市
+- 区县：西湖区
+2026-09-28 14:07:01 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:07:03 | INFO    | smart_agent | [ToolCall] -> amap_around_search args={'keyword': '家电维修'}
+2026-09-28 14:07:03 | INFO    | smart_agent | [ToolCall] <- amap_around_search result=Error invoking tool 'amap_around_search' with kwargs {'keyword': '家电维修'} with error:
+ location: Field required
+ Please fix the error and try again.
+2026-09-28 14:07:03 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 6
+2026-09-28 14:07:03 | ERROR   | smart_agent | [agent] 流式执行异常: request_id: 7d1fd058-2586-9e9f-9ad9-46828c1552e7 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+Traceback (most recent call last):
+  File "/app/app/agent/react_agent.py", line 227, in execute_stream
+    async for chunk, metadata in self.agent.astream(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3440, in astream
+    async for _ in runner.atick(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 557, in atick
+    _panic_or_proceed(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 687, in _panic_or_proceed
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 744, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 756, in ainvoke
+    input = await asyncio.create_task(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 522, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1534, in amodel_node
+    model_response = await _execute_model_async(request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1505, in _execute_model_async
+    output = await model_.ainvoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6027, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2136, in _agenerate_with_cache
+    async for chunk in self._astream(messages, stop=stop, **kwargs):
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 765, in _astream
+    async for stream_resp, is_last_chunk in agenerate_with_last_element_mark(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 152, in agenerate_with_last_element_mark
+    item = await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 646, in astream_completion_with_retry
+    async for chunk in _AioTongyiGenerator(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 632, in __anext__
+    value = await asyncio.get_running_loop().run_in_executor(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 642, in _safe_next
+    return next(self.generator)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 580, in _stream_completion_with_retry
+    yield check_response(delta_resp)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 61, in check_response
+    raise ValueError(
+ValueError: request_id: 7d1fd058-2586-9e9f-9ad9-46828c1552e7 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+During task with name 'model' and id '267675a5-5093-9bf9-f510-71c668745233'
+2026-09-28 14:07:03 | ERROR   | smart_agent | SSE 流式聊天异常
+Traceback (most recent call last):
+  File "/app/app/api/chat.py", line 84, in event_generator
+    async for chunk in ChatService.stream_chat(
+  File "/app/app/services/chat_service.py", line 80, in stream_chat
+    async for chunk in agent.execute_stream(query, db):
+  File "/app/app/agent/react_agent.py", line 227, in execute_stream
+    async for chunk, metadata in self.agent.astream(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3440, in astream
+    async for _ in runner.atick(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 557, in atick
+    _panic_or_proceed(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 687, in _panic_or_proceed
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 744, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 756, in ainvoke
+    input = await asyncio.create_task(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 522, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1534, in amodel_node
+    model_response = await _execute_model_async(request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1505, in _execute_model_async
+    output = await model_.ainvoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6027, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2136, in _agenerate_with_cache
+    async for chunk in self._astream(messages, stop=stop, **kwargs):
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 765, in _astream
+    async for stream_resp, is_last_chunk in agenerate_with_last_element_mark(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 152, in agenerate_with_last_element_mark
+    item = await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 646, in astream_completion_with_retry
+    async for chunk in _AioTongyiGenerator(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 632, in __anext__
+    value = await asyncio.get_running_loop().run_in_executor(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 642, in _safe_next
+    return next(self.generator)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 580, in _stream_completion_with_retry
+    yield check_response(delta_resp)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 61, in check_response
+    raise ValueError(
+ValueError: request_id: 7d1fd058-2586-9e9f-9ad9-46828c1552e7 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+During task with name 'model' and id '267675a5-5093-9bf9-f510-71c668745233'
+2026-09-28 14:07:04 | INFO    | smart_agent | [chat] 自动新建会话 id=57 customer=1
+2026-09-28 14:07:04 | INFO    | smart_agent | [agent] build完成 customer=1 conv=57 tools=7 recent_msgs=0
+2026-09-28 14:07:05 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:07:06 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 14:07:07 | INFO    | smart_agent | [chat] 自动新建会话 id=58 customer=1
+2026-09-28 14:07:07 | INFO    | smart_agent | [agent] build完成 customer=1 conv=58 tools=7 recent_msgs=0
+2026-09-28 14:07:07 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:07:09 | INFO    | smart_agent | [ToolCall] -> rag_summarize args={'query': '智扫通Pro X1 日常保养注意事项'}
+2026-09-28 14:07:09 | INFO    | smart_agent | [ToolCall] <- rag_summarize result=根据现有知识库未找到相关信息
+2026-09-28 14:07:09 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:07:14 | INFO    | smart_agent | [chat] 自动新建会话 id=59 customer=1
+2026-09-28 14:07:14 | INFO    | smart_agent | [agent] build完成 customer=1 conv=59 tools=7 recent_msgs=0
+2026-09-28 14:07:14 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:07:14 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 14:07:15 | INFO    | smart_agent | [ToolCall] -> amap_weather args={'city': '上海浦东新区'}
+2026-09-28 14:07:16 | INFO    | smart_agent | [ToolCall] <- amap_weather result=未查询到城市「上海浦东新区」的天气数据。
+2026-09-28 14:07:16 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:07:16 | INFO    | smart_agent | [ToolCall] -> amap_weather args={'city': '上海'}
+2026-09-28 14:07:16 | INFO    | smart_agent | [ToolCall] <- amap_weather result=【上海 天气】
+未来预报：
+  2026-09-28（周1）：白天阴 27℃ / 夜间小雨 23℃，东北风1-3级
+  2026-09-29（周2）：白天小雨 26℃ / 夜间中雨 23℃，东风1-3级
+  2026-09-30（周3）：白天小雨 26℃ / 夜间阴 21℃，东风1-3级
+  2026-10-01（周4）：白天小雨 25℃ / 夜间阴 20℃，北风1-3级
+2026-09-28 14:07:17 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 6
+2026-09-28 14:07:19 | INFO    | smart_agent | [memory] customer=1 新写入 1 条长期记忆
+2026-09-28 14:07:20 | INFO    | smart_agent | [chat] 自动新建会话 id=60 customer=1
+2026-09-28 14:07:20 | INFO    | smart_agent | [agent] build完成 customer=1 conv=60 tools=7 recent_msgs=0
+2026-09-28 14:07:20 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:07:21 | INFO    | smart_agent | [ToolCall] -> rag_summarize args={'query': '扫地机器人避障能力选购指南'}
+2026-09-28 14:07:23 | INFO    | smart_agent | [ToolCall] <- rag_summarize result=根据参考资料，扫地机器人避障能力的选购指南如下：
+
+- **优先选择3D结构光避障**：其识别精度优于红外避障，能有效避开细小杂物。
+- **带宠物家庭建议优先选用3D结构光避障配置**，以应对宠物毛发、玩具等复杂地面情况。
+2026-09-28 14:07:23 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:07:27 | INFO    | smart_agent | [memory] customer=1 新写入 2 条长期记忆
+2026-09-28 14:07:27 | INFO    | smart_agent | [chat] 自动新建会话 id=61 customer=1
+2026-09-28 14:07:27 | INFO    | smart_agent | [agent] build完成 customer=1 conv=61 tools=7 recent_msgs=0
+2026-09-28 14:07:28 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:07:29 | INFO    | smart_agent | [ToolCall] -> amap_geocode args={'address': '广州市天河区'}
+2026-09-28 14:07:29 | INFO    | smart_agent | [ToolCall] <- amap_geocode result=地址解析结果：
+- 标准化地址：广东省广州市天河区
+- 经纬度（高德GCJ02）：113.361597,23.124817
+- 省份：广东省
+- 城市：广州市
+- 区县：天河区
+2026-09-28 14:07:29 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 4
+2026-09-28 14:07:31 | INFO    | smart_agent | [ToolCall] -> amap_around_search args={'keyword': '公园'}
+2026-09-28 14:07:31 | INFO    | smart_agent | [ToolCall] <- amap_around_search result=Error invoking tool 'amap_around_search' with kwargs {'keyword': '公园'} with error:
+ location: Field required
+ Please fix the error and try again.
+2026-09-28 14:07:31 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 6
+2026-09-28 14:07:31 | ERROR   | smart_agent | [agent] 流式执行异常: request_id: 4f8975bd-1389-93f2-802b-e250567b3366 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+Traceback (most recent call last):
+  File "/app/app/agent/react_agent.py", line 227, in execute_stream
+    async for chunk, metadata in self.agent.astream(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3440, in astream
+    async for _ in runner.atick(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 557, in atick
+    _panic_or_proceed(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 687, in _panic_or_proceed
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 744, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 756, in ainvoke
+    input = await asyncio.create_task(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 522, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1534, in amodel_node
+    model_response = await _execute_model_async(request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1505, in _execute_model_async
+    output = await model_.ainvoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6027, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2136, in _agenerate_with_cache
+    async for chunk in self._astream(messages, stop=stop, **kwargs):
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 765, in _astream
+    async for stream_resp, is_last_chunk in agenerate_with_last_element_mark(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 152, in agenerate_with_last_element_mark
+    item = await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 646, in astream_completion_with_retry
+    async for chunk in _AioTongyiGenerator(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 632, in __anext__
+    value = await asyncio.get_running_loop().run_in_executor(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 642, in _safe_next
+    return next(self.generator)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 580, in _stream_completion_with_retry
+    yield check_response(delta_resp)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 61, in check_response
+    raise ValueError(
+ValueError: request_id: 4f8975bd-1389-93f2-802b-e250567b3366 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+During task with name 'model' and id 'eab48e71-eb8e-5a0f-6ad8-fe9ed93eec78'
+2026-09-28 14:07:31 | ERROR   | smart_agent | SSE 流式聊天异常
+Traceback (most recent call last):
+  File "/app/app/api/chat.py", line 84, in event_generator
+    async for chunk in ChatService.stream_chat(
+  File "/app/app/services/chat_service.py", line 80, in stream_chat
+    async for chunk in agent.execute_stream(query, db):
+  File "/app/app/agent/react_agent.py", line 227, in execute_stream
+    async for chunk, metadata in self.agent.astream(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3440, in astream
+    async for _ in runner.atick(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 557, in atick
+    _panic_or_proceed(
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 687, in _panic_or_proceed
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 744, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 756, in ainvoke
+    input = await asyncio.create_task(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 522, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1534, in amodel_node
+    model_response = await _execute_model_async(request)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain/agents/factory.py", line 1505, in _execute_model_async
+    output = await model_.ainvoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6027, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 511, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1888, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1846, in agenerate
+    raise exceptions[0]
+  File "/usr/local/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2136, in _agenerate_with_cache
+    async for chunk in self._astream(messages, stop=stop, **kwargs):
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 765, in _astream
+    async for stream_resp, is_last_chunk in agenerate_with_last_element_mark(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 152, in agenerate_with_last_element_mark
+    item = await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 646, in astream_completion_with_retry
+    async for chunk in _AioTongyiGenerator(
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 632, in __anext__
+    value = await asyncio.get_running_loop().run_in_executor(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 642, in _safe_next
+    return next(self.generator)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/chat_models/tongyi.py", line 580, in _stream_completion_with_retry
+    yield check_response(delta_resp)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/langchain_community/llms/tongyi.py", line 61, in check_response
+    raise ValueError(
+ValueError: request_id: 4f8975bd-1389-93f2-802b-e250567b3366 
+ status_code: 400 
+ code: InvalidParameter 
+ message: <400> InternalError.Algo.InvalidParameter: The "function.arguments" parameter of the code model must be in JSON format.
+During task with name 'model' and id 'eab48e71-eb8e-5a0f-6ad8-fe9ed93eec78'
+2026-09-28 14:07:32 | INFO    | smart_agent | [chat] 自动新建会话 id=62 customer=1
+2026-09-28 14:07:32 | INFO    | smart_agent | [agent] build完成 customer=1 conv=62 tools=7 recent_msgs=0
+2026-09-28 14:07:32 | INFO    | smart_agent | [BeforeModel] 当前消息数 = 2
+2026-09-28 14:08:40 | INFO    | smart_agent | 初始化 Chroma 向量库: dir=/app/data/chroma_db, collection=agent_knowledge
+2026-09-28 14:08:40 | INFO    | smart_agent | 初始化 Embeddings: text-embedding-v4
+2026-09-28 14:26:16 | INFO    | smart_agent | 数据库表结构检查完成
+2026-09-28 14:26:16 | INFO    | smart_agent | 默认管理员已存在，跳过创建
+2026-09-28 14:26:16 | INFO    | smart_agent | 动态工具加载：DB 中启用工具 7 个
+2026-09-28 14:26:16 | INFO    | smart_agent | 动态工具注册完成，共 7 个可用工具
+2026-09-28 14:26:16 | INFO    | smart_agent | 动态工具注册表加载完成

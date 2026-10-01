@@ -1,0 +1,23 @@
+<!--
+  ============================================================
+  index.html —— SPA（单页应用）的唯一 HTML 外壳
+  ------------------------------------------------------------
+  整个前端只有这一个 HTML 文件：页面切换全靠 JS 动态替换
+  <div id="app"> 里的内容，浏览器并不真正跳转页面。
+  main.js 会把 Vue 应用挂载到 #app 上，之后交给路由接管。
+  ============================================================
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>智扫通智能客服 v2</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- 入口脚本：type="module" 表示按 ES Module 方式加载（Vite 要求） -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

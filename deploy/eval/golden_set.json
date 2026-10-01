@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "purpose": "智扫通 v2 评测黄金集：召回率 / 问答准确率 / 工具调用成功率",
+    "how_to_extend": [
+      "retrieval 段：expected_sources 写知识库里的【文件名】，可写多个（互为可接受答案）",
+      "agent 段：expected_tools 写期望 Agent 调用的工具名；不需要工具的场景写 []",
+      "agent 段：reference 是参考答案（用于 LLM 裁判打分），必须来自真实知识库，不要臆造",
+      "建议规模：每类 >= 30 条，样本量太小时百分比会剧烈抖动"
+    ],
+    "known_issues": [
+      "维护保养.txt / 扫拖一体机器人100问.txt 存在部分 UTF-8 被二次编码的乱码字符（如 'ã€'），会拉低召回表现，建议先修复语料",
+      "扫地机器人100问.pdf 与 扫地机器人100问2.txt 内容高度重叠，故两类问题同时接受两个来源"
+    ]
+  },
+
+  "retrieval": [
+    { "id": "R01", "query": "扫地机器人开机没有反应，指示灯也不亮，怎么排查？", "expected_sources": ["故障排除.txt"] },
+    { "id": "R02", "query": "机器人开机后马上就自动关机了是什么原因？", "expected_sources": ["故障排除.txt"] },
+    { "id": "R03", "query": "机器人工作的时候有异响怎么办？", "expected_sources": ["故障排除.txt"] },
+    { "id": "R04", "query": "每天用完扫地机器人需要做哪些保养？", "expected_sources": ["维护保养.txt"] },
+    { "id": "R05", "query": "机身防撞条缝隙里的毛发要怎么清理？", "expected_sources": ["维护保养.txt"] },
+    { "id": "R06", "query": "底部驱动轮和万向轮缠绕了毛发怎么处理？", "expected_sources": ["维护保养.txt"] },
+    { "id": "R07", "query": "家用扫地机器人吸力选多大比较合适？", "expected_sources": ["选购指南.txt"] },
+    { "id": "R08", "query": "激光导航和视觉导航有什么区别，应该怎么选？", "expected_sources": ["选购指南.txt"] },
+    { "id": "R09", "query": "第一次使用扫地机器人需要做什么准备？", "expected_sources": ["扫地机器人100问2.txt", "扫地机器人100问.pdf"] },
+    { "id": "R10", "query": "机器人找不到充电座怎么办？", "expected_sources": ["扫地机器人100问2.txt", "扫地机器人100问.pdf"] },
+    { "id": "R11", "query": "扫拖一体机器人可以只扫地不拖地吗？", "expected_sources": ["扫拖一体机器人100问.txt"] },
+    { "id": "R12", "query": "怎么设置先扫后拖的清洁流程？", "expected_sources": ["扫拖一体机器人100问.txt"] },
+    { "id": "R13", "query": "机器人续航时间短、扫到一半就没电了怎么办？", "expected_sources": ["故障排除.txt", "选购指南.txt"] },
+    { "id": "R14", "query": "养宠物的家庭选购扫地机器人要注意什么？", "expected_sources": ["选购指南.txt"] },
+    { "id": "R15", "query": "长期不用的时候机器人应该怎么存放？", "expected_sources": ["维护保养.txt"] }
+  ],
+
+  "agent": [
+    {
+      "id": "A01",
+      "query": "扫地机器人工作时发出异响，可能是什么原因？",
+      "expected_tools": ["rag_summarize"],
+      "reference": "常见原因包括滚刷/边刷缠绕毛发或线头、驱动轮或万向轮卡入异物、风机吸入异物、尘盒安装不到位。应先关机断电，清理滚刷与轮组缠绕物、检查风机与尘盒，若清理后仍有异响需联系售后检测。"
+    },
+    {
+      "id": "A02",
+      "query": "北京今天天气怎么样？",
+      "expected_tools": ["amap_weather"],
+      "reference": "应给出北京当日的天气状况与气温。允许与实际天气存在差异，判定以「是否成功调用天气工具并返回天气信息」为准。"
+    },
+    {
+      "id": "A03",
+      "query": "帮我查一下深圳市南山区科技园的地理坐标。",
+      "expected_tools": ["amap_geocode"],
+      "reference": "应返回深圳市南山区科技园的经纬度坐标（约在东经113.95、北纬22.54附近）。"
+    },
+    {
+      "id": "A04",
+      "query": "杭州市西湖区附近3公里有哪些家电维修店？",
+      "expected_tools": ["amap_geocode", "amap_around_search"],
+      "reference": "应先用地理编码把「杭州市西湖区」转为坐标，再以该坐标做周边POI检索，返回附近的家电维修类地点列表。"
+    },
+    {
+      "id": "A05",
+      "query": "你好",
+      "expected_tools": [],
+      "reference": "应直接以客服身份寒暄回应，不需要调用任何工具。"
+    },
+    {
+      "id": "A06",
+      "query": "扫地机器人日常保养需要注意哪些方面？",
+      "expected_tools": ["rag_summarize"],
+      "reference": "应包括：定期清理滚刷与边刷缠绕的毛发、擦拭机身与防撞条、清理驱动轮和万向轮、定期清洗或更换滤网与拖布、检查电池与充电座触点等。"
+    },
+    {
+      "id": "A07",
+      "query": "上海浦东新区今天适合开窗通风吗？",
+      "expected_tools": ["amap_weather"],
+      "reference": "应查询上海浦东新区的天气（气温、天气现象、可能含风力），并据此给出是否适合开窗的建议。"
+    },
+    {
+      "id": "A08",
+      "query": "选购扫地机器人时，避障能力应该怎么看？",
+      "expected_tools": ["rag_summarize"],
+      "reference": "3D结构光避障的识别精度优于红外避障，能有效避开细小杂物；养宠物的家庭建议优先选择带结构光避障的机型。"
+    },
+    {
+      "id": "A09",
+      "query": "广州市天河区有哪些公园？",
+      "expected_tools": ["amap_geocode", "amap_around_search"],
+      "reference": "应先把广州市天河区解析为坐标，再检索该区域内的公园类POI并列出。"
+    },
+    {
+      "id": "A10",
+      "query": "谢谢你的帮助",
+      "expected_tools": [],
+      "reference": "应礼貌回应，不需要调用任何工具。"
+    }
+  ]
+}

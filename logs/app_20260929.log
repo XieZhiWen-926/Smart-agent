@@ -1,0 +1,6 @@
+2026-09-29 05:53:06 | INFO    | smart_agent | 数据库表结构检查完成
+2026-09-29 05:53:06 | INFO    | smart_agent | 默认管理员已存在，跳过创建
+2026-09-29 05:53:06 | INFO    | smart_agent | 动态工具加载：DB 中启用工具 7 个
+2026-09-29 05:53:06 | INFO    | smart_agent | 动态工具注册完成，共 7 个可用工具
+2026-09-29 05:53:06 | INFO    | smart_agent | 动态工具注册表加载完成
+2026-09-29 06:30:30 | INFO    | smart_agent | 数据集上传成功 id=1 celery_task=cad1552534254e979c3f99c48aad5f12
