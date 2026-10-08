@@ -272,18 +272,12 @@ docker-compose logs -f backend
 - 原因：`chromadb`/`grpcio` 等带原生编译；或 `langchain` 相关包版本没对齐。
 - 解决：用 Python 3.10/3.11；先升级 pip（`python -m pip install -U pip`）；国内网络可加 `-i https://pypi.tuna.tsinghua.edu.cn/simple`；不要随意升降 langchain 大版本（代码按 0.3.x 中间件 API 写的）。
 
-**Q8：端口被占用 / `port is already allocated`**
-- 原因：本机已有程序占了 80、8000、8080、3306、6379。
-- 解决：Windows 用 `netstat -ano | findstr :80` 找到 PID 后结束，或在 `docker-compose.yml` 改映射端口（如把 `"80:80"` 改成 `"8088:80"`）。
-
-**Q9：Docker 里 backend 起来了但一直报 MySQL/Redis 连接失败**
+**Q8：Docker 里 backend 起来了但一直报 MySQL/Redis 连接失败**
 - 原因：MySQL/Redis 容器还在初始化，后端抢跑。
 - 解决：compose 已配健康检查与 `depends_on: condition: service_healthy`；若仍异常，`docker-compose down` 后重新 `up -d`，并观察 `docker-compose logs mysql` 是否初始化完成。
 
-**Q10：登录后接口一直 401 Unauthorized**
+**Q9：登录后接口一直 401 Unauthorized**
 - 原因：token 过期、没带 `Authorization: Bearer ` 头，或 `JWT_SECRET_KEY` 在多实例间不一致。
 - 解决：重新登录拿新 token；确认请求头格式是 `Bearer <token>`（Bearer 后有空格）；生产环境所有 worker/网关要用同一个 `JWT_SECRET_KEY`。
 
 ---
-
-更多开发细节见 [`docs/开发指南-小白全流程.md`](docs/开发指南-小白全流程.md)。
